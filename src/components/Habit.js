@@ -15,7 +15,7 @@ const Habit = ({habit}) => {
     }
   }
   
-  // call use navigate hook from react-router-dom in a navigate varriable 
+  // call use navigate hook from react-router-dom in a navigate variable 
   const navigate=useNavigate();
 
   // call use dispatch hook a variable call dispatch
@@ -25,7 +25,6 @@ const Habit = ({habit}) => {
   const handleDelete=()=>{
     dispatch(deleteHabit(habit.id));
     toast.success("your habit deleted");
-    // alert("your habit deleted successfully")
   }
 
   // this function call after click week view button
@@ -40,7 +39,6 @@ const Habit = ({habit}) => {
     <div className="habit shadow-sm p-3 mb-5 bg-body-tertiary rounded">
       <div className="habit-left">
         <i className="fa-solid fa-layer-group"></i>
-        {/* <i className="fa-solid fa-hashtag"></i> */}
         <div>
           <h4 style={{textTransform:"capitalize"}}>{habit.name}</h4>
           <p className="day-complete">{countDone}/{todayDay+6} days</p>

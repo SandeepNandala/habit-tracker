@@ -5,7 +5,6 @@ import WeekView from "./WeekView";
 
 const App = () => {
   
-  
   return (
     <>
     <Routes>

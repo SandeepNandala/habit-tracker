@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DayView from "./DayView";
-import Navbar from "./Navbar";
+import AddHabit from "./AddHabit";
 import { useSelector } from "react-redux";
 
 const WeekView = () => {
@@ -18,7 +18,7 @@ const WeekView = () => {
   
   return (
     <>
-      <Navbar name="Week View" />
+      <AddHabit name="Week View" />
       <div className="shadow p-3 mb-5 bg-body-tertiary rounded">
       <h1 className="text-center" style={{textTransform:"uppercase",color:"#f22304"}}>{habit.name}</h1>
       <div className="days-container">

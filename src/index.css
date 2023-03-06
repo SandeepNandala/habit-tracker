@@ -18,8 +18,6 @@ body {
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  /* background-color: #0f0c29; */
-  /* background-color: #dddde3; */
   background-color: #a8a8c6;
   color: white;
 }
@@ -27,27 +25,9 @@ body {
 /* style root div */
 #root{
   width: 80%;
-  /* border-right: 1px solid #323232; */
-  /* border-left: 1px solid #323232; */
 }
 
 /* style navbar component ---------------------------------*/
-.navbar{
-  align-items: center;
-  display: flex;
-  height: 100px;
-  padding: 0px 20px;
-  justify-content: space-between;
-  /* border-bottom: 1px solid #323232; */
-}
-.right-nav{
-  display: flex;
-  align-items: center;
-}
-.right-nav h5{
-  color: #DDDDDD;
-  margin-right: 10px;
-}
 .addhabit-btn{
   cursor: pointer;
   /* color: rgb(24, 23, 23); */
@@ -82,7 +62,6 @@ body {
 .habit{
   width: 100%;
   height: 100px;
-  /* border-bottom: 1px solid #323232; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -149,7 +128,6 @@ body {
 .day-container{
   height: 150px;
   width: 200px;
-  /* background-color: #2942e4; */
   background-color: #2980b9;
   border-radius: 20px;
   padding: 5px;
@@ -167,7 +145,6 @@ p{
 .circle-icon{
   font-size: 24px;
   margin: 5px 11px;
-  /* color: #f22304; */
   cursor: pointer;
 }
 .active{

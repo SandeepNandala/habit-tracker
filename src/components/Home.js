@@ -1,11 +1,11 @@
 import React from 'react'
 import Habits from './Habits'
-import Navbar from './Navbar'
+import AddHabit from './AddHabit'
 
 const Home = () => {
   return (
     <>
-      <Navbar name="Detail View"/>
+      <AddHabit name="Detail View"/>
       <Habits/>
     </>
   )

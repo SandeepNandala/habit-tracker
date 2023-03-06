@@ -1,19 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
-let id = 1;
+let id = 1; 
 
-
+// creating the habit slice
 export const habitSlice = createSlice({
   name: "habits",
   initialState: [],
   reducers: {
+    //action to add habit 
     addHabit: (state, action) => {
       let today=new Date();
+      // assigning the past 7th day to handle the previous 6 days
       today.setDate(today.getDate()-6);
-      // let day=today.getDate()-today.getDay();
+      // getting the current day,month and year 
       let day=today.getDate()
       const month= today.getMonth();
       const year =today.getFullYear();
-   
+      
+      // creating the habit with name and status of past 6 days
       const habit = {
         id: id++,
         name: action.payload,
@@ -79,11 +82,13 @@ export const habitSlice = createSlice({
       const tempHabits = [...state, habit];
       return tempHabits;
     },
-
+   
+    // deleting the habit 
     deleteHabit: (state, action) => {
       const tempHabits = state.filter((habit) => habit.id !== action.payload);
       return tempHabits;
     },
+    // marking the status of the habit completed
     habitDone: (state, action) => {
       let tempHabits = state;
       for (let i = 0; i < tempHabits.length; i++) {
@@ -93,6 +98,7 @@ export const habitSlice = createSlice({
       }
       return tempHabits;
     },
+    // marking the status of the habit not completed
     habitUnDone: (state, action) => {
       let tempHabits = state;
       for (let i = 0; i < tempHabits.length; i++) {
@@ -102,6 +108,7 @@ export const habitSlice = createSlice({
       }
       return tempHabits;
     },
+    // no action was taken on the habit
     habitNone: (state, action) => {
       let tempHabits = state;
       for (let i = 0; i < tempHabits.length; i++) {

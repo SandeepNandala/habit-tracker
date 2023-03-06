@@ -1,32 +1,19 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { addHabit } from "../redux/features/habitSlice";
 
-const Navbar = ({ name }) => {
+const AddHabit = ({ name }) => {
   // call use dispatch hook a variable call dispatch
   const dispatch=useDispatch();
-
-  // change state acording time
-  // const [hour, setHour] = useState(0);
-  // useEffect(() => {
-  //   const date = new Date();
-  //   setHour(date.getHours());
-  // }, []);
-  
-  // function for add habit 
   const handleSave=()=>{
     const habitName=document.getElementById("habitName").value;
     dispatch(addHabit(habitName));
     toast.success("your habit added successfully")
-    // alert("Your habit added successfully");
     document.getElementById("habitName").value="";
   }
 
   return (
-    <>
-      {/* <div className="navbar"> */}
+     <>
         <div className="text-center my-5">
           <button
             className="addhabit-btn "
@@ -36,9 +23,6 @@ const Navbar = ({ name }) => {
            Add Habits
           </button>
         </div>
-      {/* </div> */}
-
-      {/* modal for add habit form */}
       <div
         className="modal fade"
         id="staticBackdrop"
@@ -84,8 +68,8 @@ const Navbar = ({ name }) => {
           </div>
         </div>
       </div>
-    </>
+      </>
   );
 };
 
-export default Navbar;
+export default AddHabit;
