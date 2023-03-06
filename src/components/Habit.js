@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteHabit } from "../redux/features/habitSlice";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const Habit = ({habit}) => {
   const today=new Date();
@@ -23,7 +24,8 @@ const Habit = ({habit}) => {
   // function call after click delete button on habit list
   const handleDelete=()=>{
     dispatch(deleteHabit(habit.id));
-    alert("your habit deleted successfully")
+    toast.success("your habit deleted");
+    // alert("your habit deleted successfully")
   }
 
   // this function call after click week view button
@@ -35,9 +37,10 @@ const Habit = ({habit}) => {
 
   
   return (
-    <div className="habit">
+    <div className="habit shadow-sm p-3 mb-5 bg-body-tertiary rounded">
       <div className="habit-left">
-        <i className="fa-solid fa-hashtag"></i>
+        <i className="fa-solid fa-layer-group"></i>
+        {/* <i className="fa-solid fa-hashtag"></i> */}
         <div>
           <h4 style={{textTransform:"capitalize"}}>{habit.name}</h4>
           <p className="day-complete">{countDone}/{todayDay+6} days</p>
@@ -46,7 +49,7 @@ const Habit = ({habit}) => {
       <div className="habit-right">
         <div className="log-btn" onClick={setId}>
           <i className="fa-solid fa-calendar-week" ></i>
-          Week View
+          View
         </div>
         <i className="fa-solid fa-trash" onClick={handleDelete}></i>
       </div>

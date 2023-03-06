@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { addHabit } from "../redux/features/habitSlice";
 
@@ -8,44 +9,34 @@ const Navbar = ({ name }) => {
   const dispatch=useDispatch();
 
   // change state acording time
-  const [hour, setHour] = useState(0);
-  useEffect(() => {
-    const date = new Date();
-    setHour(date.getHours());
-  }, []);
+  // const [hour, setHour] = useState(0);
+  // useEffect(() => {
+  //   const date = new Date();
+  //   setHour(date.getHours());
+  // }, []);
   
   // function for add habit 
   const handleSave=()=>{
     const habitName=document.getElementById("habitName").value;
     dispatch(addHabit(habitName));
-    alert("Your habit added successfully");
+    toast.success("your habit added successfully")
+    // alert("Your habit added successfully");
     document.getElementById("habitName").value="";
   }
 
   return (
     <>
-      <div className="navbar">
-        <h3>
-          {/* acording to time its shows morning,afternoon,evening and night */}
-          {hour <= 12
-            ? "Morning"
-            : hour <= 17
-            ? "Afternoon"
-            : hour <= 21
-            ? "Evening"
-            : "Night"}
-        </h3>
-        <div className="right-nav">
-          <h5>{name}</h5>
+      {/* <div className="navbar"> */}
+        <div className="text-center my-5">
           <button
-            className="addhabit-btn"
+            className="addhabit-btn "
             data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
           >
-            <i className="fa-solid fa-plus"></i> Add Habits
+           Add Habits
           </button>
         </div>
-      </div>
+      {/* </div> */}
 
       {/* modal for add habit form */}
       <div

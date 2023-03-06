@@ -36,12 +36,14 @@ const DayView = ({day}) => {
 
 
   return (
-    <div className="day-container">
+    <div className="day-container shadow-none p-3 mb-5 bg-body-tertiary rounded">
       <h5 className="text-center">{day.day}</h5>
       <p className="text-center">{date.getDate()}/{date.getMonth()+1}/{date.getFullYear()}</p>
+      <div className="icon-group">
       <i className={day.isDone===true?"fa-solid fa-circle-check circle-icon active":"fa-solid fa-circle-check circle-icon"} onClick={markToDone}></i>
       <i className={day.isDone===false?"fa-solid fa-circle-xmark circle-icon active":"fa-solid fa-circle-xmark circle-icon"} onClick={markToUnDone}></i>
       <i className={day.isDone===""?"fa-solid fa-circle-minus circle-icon active":"fa-solid fa-circle-minus circle-icon"} onClick={markToNone}></i>
+    </div>
     </div>
   );
 };
