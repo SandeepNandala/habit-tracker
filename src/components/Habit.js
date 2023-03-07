@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 const Habit = ({habit}) => {
-  const today=new Date();
-  const todayDay=today.getDay();
   let countDone=0;
   //loop for getting habit done count
   for (let i = 0; i < habit.weekLog.length; i++) {
@@ -41,7 +39,7 @@ const Habit = ({habit}) => {
         <i className="fa-solid fa-layer-group"></i>
         <div>
           <h4 style={{textTransform:"capitalize"}}>{habit.name}</h4>
-          <p className="day-complete">{countDone}/{todayDay+6} days</p>
+          <p className="day-complete">{countDone}/{7} days</p>
         </div>
       </div>
       <div className="habit-right">
