@@ -15,7 +15,8 @@ export const habitSlice = createSlice({
       let day=today.getDate()
       const month= today.getMonth();
       const year =today.getFullYear();
-      
+      const week=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      let weekDay=today.getDay();
       // creating the habit with name and status of past 6 days
       const habit = {
         id: id++,
@@ -23,7 +24,7 @@ export const habitSlice = createSlice({
         weekLog: [
           {
             id: 0,
-            day: "Sunday",
+            day: week[weekDay%7],
             dd:day,
             mm:month,
             yyyy:year,
@@ -31,7 +32,7 @@ export const habitSlice = createSlice({
           },
           {
             id: 1,
-            day: "Monday",
+            day:week[(weekDay+1)%7],
             dd:day+1,
             mm:month,
             yyyy:year,
@@ -39,7 +40,7 @@ export const habitSlice = createSlice({
           },
           {
             id: 2,
-            day: "Tuesday",
+            day:week[(weekDay+2)%7],
             dd:day+2,
             mm:month,
             yyyy:year,
@@ -47,7 +48,7 @@ export const habitSlice = createSlice({
           },
           {
             id: 3,
-            day: "Wednesday",
+            day:week[(weekDay+3)%7],
             dd:day+3,
             mm:month,
             yyyy:year,
@@ -55,7 +56,7 @@ export const habitSlice = createSlice({
           },
           {
             id: 4,
-            day: "Thursday",
+            day:week[(weekDay+4)%7],
             dd:day+4,
             mm:month,
             yyyy:year,
@@ -63,7 +64,7 @@ export const habitSlice = createSlice({
           },
           {
             id: 5,
-            day: "Friday",
+            day:week[(weekDay+5)%7],
             dd:day+5,
             mm:month,
             yyyy:year,
@@ -71,7 +72,7 @@ export const habitSlice = createSlice({
           },
           {
             id: 6,
-            day: "Saturday",
+            day:week[(weekDay+6)%7],
             dd:day+6,
             mm:month,
             yyyy:year,
